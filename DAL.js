@@ -5,7 +5,7 @@ const postNews = (callback, body) => {
   // const dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
   // body.date = dateObject;
 
-  // const newsData = new News(body);
+  const newsData = new News(body);
 
   newsData.save((err) => {
     if (err) return callback({ status: "Internal Server Error" }, 500);
