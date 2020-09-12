@@ -1,9 +1,11 @@
 const News = require("./models/newsModel");
 
 const postNews = (callback, body) => {
-  // const dateParts = body.date.split("-");
-  // const dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
-  // body.date = dateObject;
+  if (body.date !== undefined) {
+    const dateParts = body.date.split("-");
+    const dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+    body.date = dateObject;
+  }
 
   const newsData = new News(body);
 
