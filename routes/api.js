@@ -5,8 +5,12 @@ require("dotenv/config");
 
 const DAL = require("../DAL");
 
-router.get("/news", function (req, res, next) {
+router.get("/news", (req, res) => {
   DAL.getNews((data) => res.json(data));
+});
+
+router.delete("/news", (req, res) => {
+  DAL.deleteNews((data) => res.json(data));
 });
 
 router.post("/news", (req, res) =>

@@ -1,11 +1,11 @@
 const News = require("./models/newsModel");
 
 const postNews = (callback, body) => {
-  const dateParts = body.date.split("-");
-  const dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
-  body.date = dateObject;
+  // const dateParts = body.date.split("-");
+  // const dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+  // body.date = dateObject;
 
-  const newsData = new News(body);
+  // const newsData = new News(body);
 
   newsData.save((err) => {
     if (err) return callback({ status: "Internal Server Error" }, 500);
@@ -23,5 +23,10 @@ const getNews = (callback) => {
   });
 };
 
+const deleteNews = (cb) => {
+  News.remove({}, cb({ status: "deleted" }));
+};
+
 module.exports.postNews = postNews;
 module.exports.getNews = getNews;
+module.exports.deleteNews = deleteNews;
