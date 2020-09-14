@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Panel dodawania newsów</h1>
+    <form action="/news/post" method="post">
+      <input type="text" name="title" placeholder="Tytuł" />
+      <input type="text" name="text" placeholder="Treść artykułu" />
+      <input
+        type="text"
+        name="imagePath"
+        placeholder="Link do zdjęcia na okładkę"
+      />
+
+      <input type="submit" value="Dodaj news" /><br />
+      <button>Dodaj zdjęcie do galerii</button>
+    </form>
+    <div class="errorMessage display">Nie uzupełniłeś wymaganych pól</div>
+    <script src="script"></script>
+  </body>
+  <style>
+    .errorMessage {
+      background-color: tomato;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .display {
+      display: none;
+    }
+  </style>
+</html>

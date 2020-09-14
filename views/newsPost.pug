@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 POST NEWS
+  form(method='POST' action='/news/post')
+    input(type='text' name='title' placeholder='Tytuł' )
+    input(type='text' name='text' placeholder='Treść newsa' )
+    input(type='text' name='imagePath' placeholder='Okładka' )
+    input(type='text' name='gallery' placeholder='Zdjęcie 1' )
+    input(type='text' name='gallery' placeholder='Zdjęcie 2' )
+    input(type='submit' value='Post')
