@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const resultsSchema = new Schema({
   result: String,
+  urlPath: String,
+  logoPath: String,
   firstArmsPath: String,
   secondArmsPath: String,
   firstName: String,
