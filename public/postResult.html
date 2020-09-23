@@ -8,8 +8,9 @@
   <body>
     <h1>Panel dodawania wyniku</h1>
     <form action="/result/post" method="post">
-      <input type="text" name="result" placeholder="Wynik meczu" /><br />
-      <input type="submit" value="Dodaj wynik" /><br />
+      <input type="text" name="result" placeholder="Wynik meczu" />
+      <input type="text" name="logoPath" placeholder="Link logo" />
+      <br />
       <input
         type="text"
         name="firstArmsPath"
@@ -19,7 +20,7 @@
         type="text"
         name="firstName"
         placeholder="Nazwa pierwszego zespołu"
-      />
+      /><br />
       <input
         type="text"
         name="secondArmsPath"
@@ -30,6 +31,9 @@
         name="secondName"
         placeholder="Nazwa drugiego zespołu"
       />
+      <br />
+      <input type="text" name="urlPath" placeholder="URL" />
+      <input type="submit" value="Dodaj wynik" />
     </form>
     <div class="errorMessage display">Nie uzupełniłeś wymaganych pól</div>
     <script src="script"></script>
