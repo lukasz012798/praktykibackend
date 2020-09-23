@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Panel dodawania wyniku</h1>
+    <form action="/result/post" method="post">
+      <input type="text" name="result" placeholder="Wynik meczu" /><br />
+      <input type="submit" value="Dodaj wynik" /><br />
+      <input
+        type="text"
+        name="firstArmsPath"
+        placeholder="Herb pierwszego zespołu"
+      />
+      <input
+        type="text"
+        name="firstName"
+        placeholder="Nazwa pierwszego zespołu"
+      />
+      <input
+        type="text"
+        name="secondArmsPath"
+        placeholder="Herb drugiego zespołu"
+      />
+      <input
+        type="text"
+        name="secondName"
+        placeholder="Nazwa drugiego zespołu"
+      />
+    </form>
+    <div class="errorMessage display">Nie uzupełniłeś wymaganych pól</div>
+    <script src="script"></script>
+  </body>
+  <style>
+    .errorMessage {
+      background-color: tomato;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .display {
+      display: none;
+    }
+    .txtarea {
+      width: 40vw;
+      height: 40vh;
+      margin: 30px 0;
+      padding: 10px;
+    }
+  </style>
+</html>

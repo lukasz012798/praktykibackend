@@ -8,15 +8,19 @@
   <body>
     <h1>Panel dodawania newsów</h1>
     <form action="/news/post" method="post">
-      <input type="text" name="title" placeholder="Tytuł" />
-      <input type="text" name="text" placeholder="Treść artykułu" />
+      <input type="text" name="title" placeholder="Tytuł" /><br />
+      <textarea
+        class="txtarea"
+        name="text"
+        placeholder="Treść artykułu"
+      ></textarea
+      ><input type="submit" value="Dodaj news" /><br /><br />
       <input
         type="text"
         name="imagePath"
         placeholder="Link do zdjęcia na okładkę"
       />
 
-      <input type="submit" value="Dodaj news" /><br />
       <button>Dodaj zdjęcie do galerii</button>
     </form>
     <div class="errorMessage display">Nie uzupełniłeś wymaganych pól</div>
@@ -32,6 +36,12 @@
     }
     .display {
       display: none;
+    }
+    .txtarea {
+      width: 40vw;
+      height: 40vh;
+      margin: 30px 0;
+      padding: 10px;
     }
   </style>
 </html>
