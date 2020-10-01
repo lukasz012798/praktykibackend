@@ -69,4 +69,9 @@ router.post("/gallery/post", (req, res) => {
   );
 });
 
+//pobieranie wszystkich galerii
+router.get("/galleries", (req, res) => {
+  return DAL.getGalleries((data) => res.json(data));
+});
+
 module.exports = router;

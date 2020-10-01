@@ -67,6 +67,13 @@ const getResults = (callback) => {
   });
 };
 
+const getGalleries = (callback) => {
+  Gallery.find({}).exec((err, data) => {
+    if (err) return callback("błąd");
+    callback(data);
+  });
+};
+
 const deleteNews = (cb) => {
   News.remove({}, cb({ status: "deleted" }));
 };
@@ -76,4 +83,5 @@ module.exports.postResult = postResult;
 module.exports.postGallery = postGallery;
 module.exports.getNews = getNews;
 module.exports.getResults = getResults;
+module.exports.getGalleries = getGalleries;
 module.exports.deleteNews = deleteNews;
