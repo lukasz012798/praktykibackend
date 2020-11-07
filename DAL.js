@@ -78,6 +78,16 @@ const deleteNews = (cb) => {
   News.remove({}, cb({ status: "deleted" }));
 };
 
+const deleteOneNews = (cb, id) => {
+  News.findByIdAndDelete(id, function (err, docs) {
+    if (err) {
+      cb("błąd");
+    } else {
+      cb("usunieto pomyslnie");
+    }
+  });
+};
+
 module.exports.postNews = postNews;
 module.exports.postResult = postResult;
 module.exports.postGallery = postGallery;
@@ -85,3 +95,4 @@ module.exports.getNews = getNews;
 module.exports.getResults = getResults;
 module.exports.getGalleries = getGalleries;
 module.exports.deleteNews = deleteNews;
+module.exports.deleteOneNews = deleteOneNews;

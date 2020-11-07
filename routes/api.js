@@ -5,36 +5,27 @@ require("dotenv/config");
 
 const DAL = require("../DAL");
 
-//stronka z formularzem do dodawania newsa
+//
+//
+// - aktualności
+
+//site post news
 router.get("/news/post", (req, res) => {
   // res.render("newsPost");
   res.sendFile("postNews.html", { root: `${__dirname}/../public` });
 });
 
-//stronka z formularzem do dodawania wyniku
-router.get("/result/post", (req, res) => {
-  // res.render("newsPost");
-  res.sendFile("postResult.html", { root: `${__dirname}/../public` });
-});
-
-//zwraca wszystkie newsy
+//get all news
 router.get("/news", (req, res) => {
   DAL.getNews((data) => res.json(data));
 });
 
-//skrypt do obslugi formularza
+//script
 router.get("/news/script", (req, res) => {
   res.sendFile("index.js", { root: `${__dirname}/../public/javascripts` });
 });
 
-//skrypt do obslugi formularza
-router.get("/result/script", (req, res) => {
-  res.sendFile("indexResult.js", {
-    root: `${__dirname}/../public/javascripts`,
-  });
-});
-
-//dodawanie newsa
+//add news
 router.post("/news/post", (req, res) => {
   // console.log(req.body);
   return DAL.postNews(
@@ -43,9 +34,44 @@ router.post("/news/post", (req, res) => {
   );
 });
 
-//usuwanie wszystkich newsow
+//delete all news
 router.delete("/news", (req, res) => {
   DAL.deleteNews((data) => res.json(data));
+});
+
+//detele one news
+router.delete("/news/deleteOne/:id", (req, res) => {
+  DAL.deleteOneNews((data) => res.json(data), req.params.id);
+});
+
+//site - delete news
+router.get("/news/delete", (req, res) => {
+  // res.render("newsPost");
+  res.sendFile("deleteNews.html", { root: `${__dirname}/../public` });
+});
+
+//deletesite script
+router.get("/news/deletescript", (req, res) => {
+  res.sendFile("deleteScript.js", {
+    root: `${__dirname}/../public/javascripts`,
+  });
+});
+
+// - -aktualności
+//
+//
+
+//stronka z formularzem do dodawania wyniku
+router.get("/result/post", (req, res) => {
+  // res.render("newsPost");
+  res.sendFile("postResult.html", { root: `${__dirname}/../public` });
+});
+
+//skrypt do obslugi formularza
+router.get("/result/script", (req, res) => {
+  res.sendFile("indexResult.js", {
+    root: `${__dirname}/../public/javascripts`,
+  });
 });
 
 //dodawanie wyniku
