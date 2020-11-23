@@ -3,28 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Edycja newsow</title>
   </head>
   <body>
-    <h1>Panel dodawania newsów</h1>
-    <form action="/news/post" method="post">
-      <input type="text" name="title" placeholder="Tytuł" /><br />
+    <h1>Panel edycji newsów</h1>
+    <div class="form">
+      <!-- action="/news/post" method="post" -->
+      <input id="title" type="text" name="title" placeholder="Tytuł" /><br />
       <textarea
         class="txtarea"
         name="text"
         placeholder="Treść artykułu"
       ></textarea
-      ><input type="submit" value="Dodaj news" /><br /><br />
+      ><br />
+      Link zdjęcia na okładkę:
       <input
         type="text"
         name="imagePath"
+        id="cover"
         placeholder="Link do zdjęcia na okładkę"
-      />
-
-      <button>Dodaj zdjęcie do galerii</button>
-    </form>
-    <div class="errorMessage display">Nie uzupełniłeś wszystkich pól</div>
-    <script src="script"></script>
+      /><br />
+      Linki do zdjęć w galerii:
+    </div>
+    <button class="addPhotoButton">Dodaj zdjęcie do galerii</button><br />
+    <button id="submitButton">Zatwierdź edycję</button>
+    <script src="patchScript"></script>
   </body>
   <style>
     .errorMessage {

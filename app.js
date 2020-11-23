@@ -20,6 +20,8 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 
 var apiRouter = require("./routes/api");
+var newsRouter = require("./routes/news");
+var resultsRouter = require("./routes/results");
 
 var app = express();
 
@@ -54,6 +56,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/", apiRouter);
+app.use("/news", newsRouter);
+app.use("/results", resultsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
